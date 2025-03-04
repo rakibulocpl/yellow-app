@@ -9,8 +9,8 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME,
   port: process.env.DB_PORT || 3306, // Default MySQL port
   waitForConnections: true,
-  connectionLimit: 10, // Maximum number of connections
-  queueLimit: 0, // No limit on the queue
+  connectionLimit: 10, // Maximum number of connections in the pool
+  queueLimit: 0, // No limit on queued connections
 });
 
 // Function to execute a query
@@ -20,7 +20,7 @@ const query = async (sql, params) => {
     return rows;
   } catch (err) {
     console.error("Database query error:", err);
-    throw err;
+    throw err; // Re-throwing to propagate the error to the caller
   }
 };
 
