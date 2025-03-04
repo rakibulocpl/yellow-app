@@ -1,4 +1,4 @@
-# BD Skills API
+# Yellow APP API
 
 This is a simple API built with Express.js and PostgreSQL to manage courses. It includes rate limiting and API key.
 
@@ -30,7 +30,7 @@ This is a simple API built with Express.js and PostgreSQL to manage courses. It 
     DB_PORT=5432
     DB_USER=postgres
     DB_PASS=
-    DB_NAME=bdskills_api
+    DB_NAME=yellow_app
     API_KEY=your-api-key
     API_RATE_LIMIT=100
     ```
